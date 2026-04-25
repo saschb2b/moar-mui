@@ -1,0 +1,15 @@
+node_modules
+dist
+coverage
+storybook-static
+.tsbuildinfo
+*.tsbuildinfo
+.DS_Store
+.eslintcache
+.vite
+.turbo
+.pnpm-store
+*.log
+.env
+.env.*
+!.env.example

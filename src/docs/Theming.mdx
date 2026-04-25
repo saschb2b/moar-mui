@@ -1,0 +1,52 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting Started/Theming" />
+
+# Theming
+
+`moar-mui` does not invent a parallel theme system — it uses MUI's. `createMoarTheme()` is a thin wrapper around `createTheme()` that pre-applies a few sensible defaults (Inter font stack, slightly larger `borderRadius`) and accepts the same `ThemeOptions` you'd pass to MUI directly.
+
+## Minimum setup
+
+```tsx
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { createMoarTheme, MoarButton } from 'moar-mui';
+
+const theme = createMoarTheme();
+
+export const App = () => (
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <MoarButton variant="contained">Hello</MoarButton>
+  </ThemeProvider>
+);
+```
+
+## Customising
+
+Pass any `ThemeOptions`. They're deep-merged on top of `moar-mui`'s defaults:
+
+```tsx
+const theme = createMoarTheme({
+  palette: {
+    mode: 'dark',
+    primary: { main: '#7c4dff' },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: { textTransform: 'none' },
+      },
+    },
+  },
+});
+```
+
+## Defaults applied
+
+| Token              | Value                                                              |
+| ------------------ | ------------------------------------------------------------------ |
+| `shape.borderRadius` | `12`                                                             |
+| `typography.fontFamily` | `"Inter", "Roboto", "Helvetica", "Arial", system-ui, sans-serif` |
+
+That's it. Everything else is vanilla MUI.

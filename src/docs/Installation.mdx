@@ -1,0 +1,46 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting Started/Installation" />
+
+# Installation
+
+## Prerequisites
+
+- **Node** ≥ 20.19
+- **React** 18 or 19
+- **@mui/material** ^9, **@emotion/react** ^11, **@emotion/styled** ^11
+
+## Install
+
+```bash
+pnpm add moar-mui @mui/material @emotion/react @emotion/styled
+```
+
+```bash
+npm install moar-mui @mui/material @emotion/react @emotion/styled
+```
+
+```bash
+yarn add moar-mui @mui/material @emotion/react @emotion/styled
+```
+
+## Usage
+
+`moar-mui` exposes both a barrel and per-component subpaths. Both tree-shake equivalently after bundling — pick whichever reads better at the call site.
+
+```tsx
+import { MoarButton, createMoarTheme } from 'moar-mui';
+```
+
+```tsx
+import { MoarButton } from 'moar-mui/MoarButton';
+import { createMoarTheme } from 'moar-mui/theme';
+```
+
+## TypeScript
+
+Type definitions ship inside the package. No separate `@types/...` install is required.
+
+## Bundling
+
+The package is **ESM-only** (`"type": "module"`, no CJS fallback). Modern bundlers (Vite, Next.js 14+, esbuild, Rollup, webpack 5) handle this natively. If you're stuck on a CJS-only consumer, file an issue.

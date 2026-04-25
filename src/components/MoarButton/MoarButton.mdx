@@ -1,0 +1,65 @@
+import { Canvas, Controls, Meta, Primary, Source, Story, Title } from '@storybook/addon-docs/blocks';
+
+import * as MoarButtonStories from './MoarButton.stories';
+
+<Meta of={MoarButtonStories} />
+
+<Title />
+
+A drop-in replacement for [`Button`](https://mui.com/material-ui/react-button/) that adds a `pill` shape modifier. All props from the underlying MUI `Button` (variant, color, size, startIcon, endIcon, href, …) are forwarded.
+
+## Import
+
+```tsx
+import { MoarButton } from 'moar-mui';
+// or — same code, smallest import graph:
+import { MoarButton } from 'moar-mui/MoarButton';
+```
+
+## Basic usage
+
+<Primary />
+
+<Controls />
+
+## Variants
+
+The standard MUI variants are available unchanged.
+
+<Canvas of={MoarButtonStories.Outlined} />
+
+## Pill shape
+
+Set `pill` to render with a fully-rounded `border-radius`, regardless of the active theme's `shape.borderRadius`.
+
+<Canvas of={MoarButtonStories.Pill} />
+
+```tsx
+<MoarButton pill variant="contained">Subscribe</MoarButton>
+```
+
+## Disabled state
+
+<Canvas of={MoarButtonStories.Disabled} />
+
+## Theming
+
+`MoarButton` uses Emotion's `styled` factory and reads from the active MUI theme, so any `components.MuiButton` overrides on your `ThemeProvider` apply automatically:
+
+```tsx
+import { createMoarTheme } from 'moar-mui';
+
+const theme = createMoarTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: { textTransform: 'none' },
+      },
+    },
+  },
+});
+```
+
+## API
+
+The auto-generated table below is built from `MoarButton.types.ts` via `react-docgen-typescript`. `MoarButton` extends [`ButtonProps`](https://mui.com/material-ui/api/button/), so every MUI Button prop is also accepted.

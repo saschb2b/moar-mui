@@ -1,0 +1,24 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting Started/Introduction" />
+
+# moar-mui
+
+A curated set of custom React components built on top of [Material UI](https://mui.com/). Strict-typed, tree-shakable, ESM-first.
+
+## Why
+
+`@mui/material` covers the big surface area beautifully. `moar-mui` is the place to put the small, opinionated extras that show up across your apps — pill buttons, branded surfaces, domain-specific widgets — without forking MUI itself.
+
+## Highlights
+
+- **MUI-native.** Every component extends a real MUI component's props; nothing is reinvented.
+- **Tree-shakable.** Per-component subpath exports (`moar-mui/MoarButton`) and `sideEffects: false`.
+- **Strict TypeScript.** Built against `strictTypeChecked` + `verbatimModuleSyntax` + `exactOptionalPropertyTypes`.
+- **Documented.** This Storybook is the canonical reference — every component ships with autodocs, prop tables, and live examples.
+
+## What's next
+
+- **Installation** — peer-deps, ESM-only, Node ≥ 20.19.
+- **Theming** — wrap with `createMoarTheme()`; all MUI theme overrides flow through.
+- **Components** — start with [Inputs / MoarButton](?path=/docs/components-inputs-moarbutton--docs).

@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "force",
+
+    "jsx": "react-jsx",
+    "useDefineForClassFields": true,
+
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    "strict": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "exactOptionalPropertyTypes": true,
+    "useUnknownInCatchVariables": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "skipLibCheck": true,
+    "noEmit": true,
+
+    "ignoreDeprecations": "6.0"
+  },
+  "include": [
+    "src",
+    ".storybook/globals.d.ts",
+    ".storybook/main.ts",
+    ".storybook/manager.ts",
+    ".storybook/preview.tsx",
+    ".storybook/theme.ts",
+    ".storybook/vitest.setup.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    "tsup.config.ts",
+    "eslint.config.mjs",
+    "prettier.config.mjs"
+  ],
+  "exclude": ["dist", "node_modules", "storybook-static", "coverage"]
+}
